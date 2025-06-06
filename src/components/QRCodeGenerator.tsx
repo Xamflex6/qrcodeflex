@@ -7,13 +7,12 @@ const QRCodeGenerator: React.FC = () => {
   const [url, setUrl] = useState<string>('');
   const [qrValue, setQrValue] = useState<string>('');
   const [showQR, setShowQR] = useState<boolean>(false);
-  const qrRef = useRef<HTMLDivElement>(null);
-  // Simple URL validation
+  const qrRef = useRef<HTMLDivElement>(null);  // Simple URL validation
   const isValidUrl = (string: string): boolean => {
     try {
       new URL(string);
       return true;
-    } catch (_) {
+    } catch {
       return false;
     }
   };
